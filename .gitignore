@@ -1,0 +1,11 @@
+# R user's data
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Builded website
+public
+
+# System file
+*.DS_Store

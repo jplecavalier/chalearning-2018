@@ -1,0 +1,15 @@
+---
+title: "Démonstration blogdown"
+author: "Laurent Caron & J.P. Le Cavalier"
+date: 2018-08-25
+tags: ["blogdown"]
+slug: "demo-blogdown"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+L'objectif de cette démonstration est de familiariser l'audiance au paquetage `blogdown` à l'aide d'un exemple appliqué.
+
+Comme son nom l'indique, le paquetage `blogdown` peut être utilisé pour faciliter la création d'un blogue personnel. Bien que, à première vue, on pourrait penser que ce paquetage sert exclusivement à créer des blogues, on peut généraliser son utilisation à la création de site statique.
