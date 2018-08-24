@@ -10,7 +10,7 @@ Recipe for the summer 2018 edition of Machine Learning chalet
 ## Steps
 1. Try [this markdown demo](http://markdown-it.github.io) to familiarize yourself with markdown 
 2. Save [this file](http://math.mcgill.ca/yyang/regression/RMarkdown/example.Rmd) as "file/path/test.Rmd"
-3. Render that file as an html document with the following R command
+3. Render that file as an html document with the following R command  
 ``` rmarkdown::render("file/path/test.Rmd", output_format = "html_document") ```
 4. At the R command line, run the following chunk to install the blogdown package  
 ``` install.packages("blogdown") ```
