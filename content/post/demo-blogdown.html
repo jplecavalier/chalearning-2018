@@ -9,5 +9,28 @@ slug: "demo-blogdown"
 
 
 
-<p>L’objectif de cette démonstration est de familiariser l’audiance au paquetage <code>blogdown</code> à l’aide d’un exemple appliqué.</p>
-<p>Comme son nom l’indique, le paquetage <code>blogdown</code> peut être utilisé pour faciliter la création d’un blogue personnel. Bien que, à première vue, on pourrait penser que ce paquetage sert exclusivement à créer des blogues, on peut généraliser son utilisation à la création de site statique.</p>
+<p>L’objectif de cette démonstration est de familiariser l’audiance au paquetage <code>blogdown</code> créé par l’unique <a href="https://yihui.name">Yihui Xie</a>.</p>
+<p>Comme son nom l’indique, le paquetage <code>blogdown</code> peut être utilisé pour faciliter la création d’un blogue personnel. À première vue, on pourrait penser que ce paquetage sert exclusivement à créer des blogues, mais on peut généraliser son utilisation à la création de sites statiques.</p>
+<p>La plus grande force de <code>blogdown</code> est probablement sa simplicité d’utilisation. Bien qu’il soit possible et relativement facile de personnaliser chaque étape du processus aux goûts du développeur, le comportement par défaut du paquetage permet de créer des sites web de qualité en quelques lignes de code.</p>
+<div id="comment-ca-marche" class="section level1">
+<h1>Comment ça marche?</h1>
+<p>Après avoir créé un nouveau projet à partir d’un répertoire vide, on installe le paquetage <code>blogdown</code> et on crée un nouveau site web en exécutant les commandes</p>
+<pre class="r"><code>install.packages(&quot;blogdown&quot;)
+blogdown::new_site()</code></pre>
+<p>Les trois composantes de base de <code>blogdown</code> ont alors été générées automatiquement.</p>
+<div id="le-fichier-config.toml" class="section level2">
+<h2>Le fichier <code>config.toml</code></h2>
+<p>Ce fichier rassemble les options de configuration et les métadonnées du site. Par exemple, on peut choisir la forme des liens URLs qui seront générés automatiquement pour chaque article contenu sur le site en modifiant la configuration</p>
+<pre class="r"><code>[permalinks]
+    post = &quot;/:year/:month/:day/:slug/&quot;</code></pre>
+<p>La consultation du <a href="https://github.com/jplecavalier/chalearning-2018/blob/master/config.toml">fichier de configuration du site</a> peut aider à se familiariser avec la syntaxe et les différentes possibilités.</p>
+</div>
+<div id="le-repertoire-content" class="section level2">
+<h2>Le répertoire <code>content/</code></h2>
+<p>Ce répertoire rassemble tout le contenu du site. La structure est libre au développeur et devrait minimalement être en lien avec la structure du site. On y retrouve généralement des fichiers au format <code>.Rmd</code>, <code>.md</code> et <code>.html</code>.</p>
+</div>
+<div id="le-repertoire-public" class="section level2">
+<h2>Le répertoire <code>public/</code></h2>
+<p>Ce répertoire comprend l’ensemble des fichiers nécessaires pour pouvoir déployer le site statique. Le contenu de ce dossier est généré automatiquement lorsque le site est compilé, l’utilisateur ne devrait donc pas le modifier manuellement et l’exclure des fichiers suivis par un logiciel de gestion de versions.</p>
+</div>
+</div>
