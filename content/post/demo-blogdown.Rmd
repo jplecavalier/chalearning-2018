@@ -10,6 +10,36 @@ slug: "demo-blogdown"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-L'objectif de cette démonstration est de familiariser l'audiance au paquetage `blogdown` à l'aide d'un exemple appliqué.
+L'objectif de cette démonstration est de familiariser l'audiance au paquetage `blogdown` créé par l'unique [Yihui Xie](https://yihui.name).
 
-Comme son nom l'indique, le paquetage `blogdown` peut être utilisé pour faciliter la création d'un blogue personnel. Bien que, à première vue, on pourrait penser que ce paquetage sert exclusivement à créer des blogues, on peut généraliser son utilisation à la création de site statique.
+Comme son nom l'indique, le paquetage `blogdown` peut être utilisé pour faciliter la création d'un blogue personnel. À première vue, on pourrait penser que ce paquetage sert exclusivement à créer des blogues, mais on peut généraliser son utilisation à la création de sites statiques.
+
+La plus grande force de `blogdown` est probablement sa simplicité d'utilisation. Bien qu'il soit possible et relativement facile de personnaliser chaque étape du processus aux goûts du développeur, le comportement par défaut du paquetage permet de créer des sites web de qualité en quelques lignes de code.
+
+# Comment ça marche?
+
+Après avoir créé un nouveau projet à partir d'un répertoire vide, on installe le paquetage `blogdown` et on crée un nouveau site web en exécutant les commandes
+```{r install_blogdown, eval=FALSE}
+install.packages("blogdown")
+blogdown::new_site()
+```
+
+Les trois composantes de base de `blogdown` ont alors été générées automatiquement.
+
+## Le fichier `config.toml`
+
+Ce fichier rassemble les options de configuration et les métadonnées du site. Par exemple, on peut choisir la forme des liens URLs qui seront générés automatiquement pour chaque article contenu sur le site en modifiant la configuration
+```{r config_toml, eval=FALSE}
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+```
+
+La consultation du [fichier de configuration du site](https://github.com/jplecavalier/chalearning-2018/blob/master/config.toml) peut aider à se familiariser avec la syntaxe et les différentes possibilités.
+
+## Le répertoire `content/`
+
+Ce répertoire rassemble tout le contenu du site. La structure est libre au développeur et devrait minimalement être en lien avec la structure du site. On y retrouve généralement des fichiers au format `.Rmd`, `.md` et `.html`.
+
+## Le répertoire `public/`
+
+Ce répertoire comprend l'ensemble des fichiers nécessaires pour pouvoir déployer le site statique. Le contenu de ce dossier est généré automatiquement lorsque le site est compilé, l'utilisateur ne devrait donc pas le modifier manuellement et l'exclure des fichiers suivis par un logiciel de gestion de versions.
